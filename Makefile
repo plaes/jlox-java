@@ -7,9 +7,15 @@ CLASSES = \
 	lox/Scanner.java \
 	lox/Token.java \
 	lox/TokenType.java
-default: classes
+
+TOOLS = \
+	tool/GenerateAst.java
+
+default: classes tools
 
 classes: $(CLASSES:.java=.class)
+tools: $(TOOLS:.java=.class)
 
 clean:
 	rm lox/*.class
+	rm tools/*.class
