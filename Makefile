@@ -3,6 +3,7 @@
 	javac $*.java
 
 CLASSES = \
+	lox/Expr.java \
 	lox/Lox.java \
 	lox/Scanner.java \
 	lox/Token.java \
@@ -11,11 +12,15 @@ CLASSES = \
 TOOLS = \
 	tool/GenerateAst.java
 
-default: classes tools
 
-classes: $(CLASSES:.java=.class)
+default: tools classes
+
+classes: lox/Expr.class $(CLASSES:.java=.class)
 tools: $(TOOLS:.java=.class)
 
+lox/Expr.java: tools
+	java tool.GenerateAst lox
+
 clean:
-	rm lox/*.class
-	rm tools/*.class
+	rm -f lox/*.class
+	rm -f tool/*.class
