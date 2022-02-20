@@ -3,6 +3,7 @@
 	javac $*.java
 
 CLASSES = \
+	lox/AstPrinter.java \
 	lox/Expr.java \
 	lox/Lox.java \
 	lox/Scanner.java \
