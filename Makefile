@@ -6,6 +6,7 @@ CLASSES = \
 	lox/AstPrinter.java \
 	lox/Expr.java \
 	lox/Lox.java \
+	lox/Parser.java \
 	lox/Scanner.java \
 	lox/Token.java \
 	lox/TokenType.java
