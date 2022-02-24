@@ -8,6 +8,7 @@ CLASSES = \
 	lox/Interpreter.java \
 	lox/Lox.java \
 	lox/Parser.java \
+	lox/RuntimeError.java \
 	lox/Scanner.java \
 	lox/Token.java \
 	lox/TokenType.java
