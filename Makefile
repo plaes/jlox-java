@@ -2,6 +2,10 @@
 .java.class:
 	javac $*.java
 
+AST_CLASSES = \
+	lox/Expr.java \
+	lox/Stmt.java
+
 CLASSES = \
 	lox/AstPrinter.java \
 	lox/Expr.java \
@@ -19,12 +23,13 @@ TOOLS = \
 
 default: tools classes
 
-classes: lox/Expr.class $(CLASSES:.java=.class)
+classes: $(AST_CLASSES:.java=.class) $(CLASSES:.java=.class)
 tools: $(TOOLS:.java=.class)
 
-lox/Expr.java: tools
+$(AST_CLASSES):
 	java tool.GenerateAst lox
 
 clean:
 	rm -f lox/*.class
 	rm -f tool/*.class
+	rm -r $(AST_CLASSES)
