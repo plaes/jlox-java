@@ -8,7 +8,6 @@ AST_CLASSES = \
 
 CLASSES = \
 	lox/AstPrinter.java \
-	lox/Expr.java \
 	lox/Interpreter.java \
 	lox/Lox.java \
 	lox/Parser.java \
