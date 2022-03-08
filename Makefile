@@ -27,7 +27,7 @@ default: tools classes
 classes: $(AST_CLASSES:.java=.class) $(CLASSES:.java=.class)
 tools: $(TOOLS:.java=.class)
 
-$(AST_CLASSES):
+$(AST_CLASSES): $(TOOLS)
 	java tool.GenerateAst lox
 
 clean:
